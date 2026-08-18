@@ -1,5 +1,7 @@
 import { Cta, TelegramCta } from "./cta";
-import { MediaPlaceholder, Reveal, Section, SectionHeading } from "./primitives";
+import { Reveal, Section, SectionHeading } from "./primitives";
+import neuroBefore from "@/assets/neuro-before.jpg.asset.json";
+import neuroAfter from "@/assets/neuro-after.jpg.asset.json";
 
 const PROBLEMS = [
   {
@@ -228,18 +230,28 @@ export function NeuroPhoto() {
         </Reveal>
         <Reveal delay={120}>
           <div className="surface-card grid h-full gap-5 rounded-3xl p-8 sm:grid-cols-2">
-            {/* BU YERGA "OLDIN" RASMINI QO‘YING */}
-            <MediaPlaceholder
-              label="Oldin"
-              hint="Bu yerga mijozning original fotosuratini joylashtiring."
-              className="min-h-64"
-            />
-            {/* BU YERGA "KEYIN" RASMINI QO‘YING */}
-            <MediaPlaceholder
-              label="Keyin"
-              hint="Bu yerga AI orqali yaratilgan natija rasmini joylashtiring."
-              className="min-h-64"
-            />
+            <figure className="relative overflow-hidden rounded-2xl border border-border">
+              <img
+                src={neuroBefore.url}
+                alt="Neyrofotosessiyadan oldingi original fotosurat"
+                loading="lazy"
+                className="h-full min-h-64 w-full object-cover"
+              />
+              <figcaption className="absolute top-3 left-3 rounded-full border border-border bg-obsidian/80 px-3 py-1 text-[11px] font-bold tracking-[0.2em] text-steel uppercase">
+                Oldin
+              </figcaption>
+            </figure>
+            <figure className="relative overflow-hidden rounded-2xl border border-primary/40">
+              <img
+                src={neuroAfter.url}
+                alt="AI neyrofotosessiya orqali yaratilgan professional portret"
+                loading="lazy"
+                className="h-full min-h-64 w-full object-cover"
+              />
+              <figcaption className="absolute top-3 left-3 rounded-full border border-primary/50 bg-obsidian/80 px-3 py-1 text-[11px] font-bold tracking-[0.2em] text-primary uppercase">
+                Keyin
+              </figcaption>
+            </figure>
             <div className="sm:col-span-2">
               <TelegramCta className="w-full" label="Neyrofotosessiya haqida savol berish →" />
             </div>
