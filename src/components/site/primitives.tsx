@@ -9,9 +9,9 @@ export function Reveal({
   as: Tag = "div",
 }: {
   children: ReactNode;
-  className?: string;
-  delay?: number;
-  as?: "div" | "section" | "li" | "article";
+  className?: string | undefined;
+  delay?: number | undefined;
+  as?: "div" | "section" | "li" | "article" | undefined;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -51,10 +51,10 @@ export function SectionHeading({
   subtitle,
   align = "center",
 }: {
-  eyebrow?: string;
+  eyebrow?: string | undefined;
   title: string;
-  subtitle?: string;
-  align?: "center" | "left";
+  subtitle?: string | undefined;
+  align?: "center" | "left" | undefined;
 }) {
   return (
     <Reveal
@@ -85,9 +85,9 @@ export function Section({
   children,
   className,
 }: {
-  id?: string;
+  id?: string | undefined;
   children: ReactNode;
-  className?: string;
+  className?: string | undefined;
 }) {
   return (
     <section
@@ -100,7 +100,7 @@ export function Section({
 }
 
 /** Metallic diagonal accent inspired by the logo */
-export function DiagonalAccent({ className }: { className?: string }) {
+export function DiagonalAccent({ className }: { className?: string | undefined }) {
   return (
     <div
       aria-hidden
@@ -123,7 +123,7 @@ export function MediaPlaceholder({
 }: {
   label: string;
   hint: string;
-  className?: string;
+  className?: string | undefined;
 }) {
   return (
     <div
