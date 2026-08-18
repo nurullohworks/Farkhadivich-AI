@@ -79,7 +79,6 @@ export function Portfolio() {
     <Section id="portfolio" className="border-y border-border/60 bg-obsidian/50">
       <SectionHeading
         eyebrow="Portfolio"
-        title="Qanday ishlar yaratishimizni ko‘ring."
         subtitle="Har bir loyiha — g‘oya, kreativ yechim va vizual natijaning birlashmasi."
       />
 
