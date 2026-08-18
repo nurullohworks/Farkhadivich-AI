@@ -1,24 +1,78 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/site/header";
+import { Hero } from "@/components/site/hero";
+import { AiVideoExplainer, NeuroPhoto, Problems, Services } from "@/components/site/sections-a";
+import { CaseStudy, Portfolio } from "@/components/site/portfolio";
+import { Business, Process, SocialProof } from "@/components/site/business";
+import { Course, Income } from "@/components/site/course";
+import { ContactForm, Faq, FinalCta } from "@/components/site/faq-contact";
+import { Footer, MobileBar } from "@/components/site/footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "FARKHADIVICH AI — AI video, neyrofotosessiya va AI kurs";
+const DESCRIPTION =
+  "FARKHADIVICH AI — bizneslar va ijodkorlar uchun realistik AI videolar, reklama roliklari, neyrofotosessiya, AI multfilm va AI kontent kursi. G‘oyangizni kelajak vizualiga aylantiramiz.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      {
+        name: "keywords",
+        content:
+          "FARKHADIVICH AI, AI video xizmatlari, AI video Uzbekistan, AI reklama video, neyrofotosessiya, AI multfilm, AI video kurs, AI orqali daromad, AI kreativ xizmatlar, AI video yaratish, personal brand kontent",
+      },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "FARKHADIVICH AI",
+          description: DESCRIPTION,
+          slogan: "G‘oyangizni kelajak vizualiga aylantiramiz.",
+          areaServed: "UZ",
+          telephone: ["+998937607727", "+998949967760"],
+          sameAs: ["https://t.me/farkhadivichai"],
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <Problems />
+        <Services />
+        <AiVideoExplainer />
+        <NeuroPhoto />
+        <Portfolio />
+        <CaseStudy />
+        <Business />
+        <Course />
+        <Income />
+        <SocialProof />
+        <Process />
+        <Faq />
+        <FinalCta />
+        <ContactForm />
+      </main>
+      <Footer />
+      <MobileBar />
     </div>
   );
 }
