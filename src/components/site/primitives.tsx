@@ -52,7 +52,7 @@ export function SectionHeading({
   align = "center",
 }: {
   eyebrow?: string | undefined;
-  title: string;
+  title?: string | undefined;
   subtitle?: string | undefined;
   align?: "center" | "left" | undefined;
 }) {
@@ -68,9 +68,11 @@ export function SectionHeading({
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="mt-5 text-3xl leading-[1.1] font-extrabold text-balance sm:text-4xl md:text-5xl">
-        <span className="text-chrome">{title}</span>
-      </h2>
+      {title ? (
+        <h2 className="mt-5 text-3xl leading-[1.1] font-extrabold text-balance sm:text-4xl md:text-5xl">
+          <span className="text-chrome">{title}</span>
+        </h2>
+      ) : null}
       {subtitle ? (
         <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
           {subtitle}
