@@ -45,7 +45,7 @@ export function Header() {
             width={44}
             height={44}
           />
-          <span className="truncate text-sm font-extrabold tracking-[0.16em] sm:text-base">
+          <span className="truncate text-sm font-extrabold tracking-[0.16em] whitespace-nowrap sm:text-base xl:overflow-visible">
             <span className="text-chrome">FARKHADIVICH</span>{" "}
             <span className="text-primary">AI</span>
           </span>
@@ -67,7 +67,7 @@ export function Header() {
             href={TELEGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-xl border border-chrome/70 px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary lg:inline-flex"
+            className="hidden rounded-xl border border-chrome/70 px-4 py-2.5 text-sm font-semibold whitespace-nowrap text-foreground transition-colors hover:border-primary hover:text-primary 2xl:inline-flex"
           >
             Telegram orqali bog‘lanish
           </a>
