@@ -72,7 +72,7 @@ export function Problems() {
     <Section>
       <SectionHeading
         eyebrow="Muammo"
-        title="Kontentingiz bormi? Ammo u yetarlicha e’tibor jalb qilyaptimi?"
+        title="Kontentingiz bormi? Ammo u yetarlicha e’tibor jalb qilmayaptimi?"
         subtitle="Bugungi raqamli muhitda shunchaki kontent yetarli emas. Brend e’tibor tortishi, ishonch uyg‘otishi va esda qolishi kerak."
       />
       <div className="mt-14 grid gap-6 md:grid-cols-3">
