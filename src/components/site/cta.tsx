@@ -30,8 +30,8 @@ export function Cta({
   href: string;
   children: ReactNode;
   variant?: keyof typeof styles;
-  className?: string;
-  external?: boolean;
+  className?: string | undefined;
+  external?: boolean | undefined;
 }) {
   return (
     <a
@@ -50,8 +50,8 @@ export function TelegramCta({
   label = "Telegram orqali bog‘lanish →",
 }: {
   variant?: keyof typeof styles;
-  className?: string;
-  label?: string;
+  className?: string | undefined;
+  label?: string | undefined;
 }) {
   return (
     <Cta href={TELEGRAM_URL} external variant={variant} className={className}>
