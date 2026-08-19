@@ -8,12 +8,20 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 8080,
-    allowedHosts: true,
+    allowedHosts: [
+      "farkhadivich-ai-production.up.railway.app",
+      ".up.railway.app",
+      ".railway.app",
+    ],
   },
   preview: {
     host: "0.0.0.0",
     port: 8080,
-    allowedHosts: true,
+    allowedHosts: [
+      "farkhadivich-ai-production.up.railway.app",
+      ".up.railway.app",
+      ".railway.app",
+    ],
   },
   plugins: [
     tanstackStart(),
