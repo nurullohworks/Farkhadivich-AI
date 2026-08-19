@@ -18,7 +18,7 @@ export const uz = {
   },
   hero: {
     badge: "AI Creative Studio",
-    title: "G‘oyangizni kelajak vizualiga aylantiramiz.",
+    title: "G'oyangizni kelajak vizualiga aylantiramiz.",,
     slogan: "Kelajakni kutmang. Uni yarating.",
     lead: "FARKHADIVICH AI — bizneslar, brendlar va ijodkorlar uchun realistik AI videolar, neyrofotosessiya, kreativ animatsiyalar va zamonaviy vizual kontent yaratadi.",
     cta: "Loyiham uchun taklif olish →",
