@@ -57,14 +57,9 @@ function Index() {
         <Hero />
         <Problems />
         <Services />
-        <AiVideoExplainer />
-        <NeuroPhoto />
-        <Portfolio />
-        <CaseStudy />
         <Business />
         <Course />
         <Income />
-        <SocialProof />
         <Process />
         <Faq />
         <FinalCta />
