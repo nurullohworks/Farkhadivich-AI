@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+﻿import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { LanguageProvider } from "../i18n/lang";
 
 function NotFoundComponent() {
   return (
@@ -81,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "FARKHADIVICH AI — AI kreativ studiya: realistik AI videolar, neyrofotosessiya va AI kontent kursi.",
+          "FARKHADIVICH AI вЂ” AI kreativ studiya: realistik AI videolar, neyrofotosessiya va AI kontent kursi.",
       },
       { name: "author", content: "FARKHADIVICH AI" },
       { property: "og:site_name", content: "FARKHADIVICH AI" },
@@ -128,8 +129,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <LanguageProvider>
+        <Outlet />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

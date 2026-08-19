@@ -1,104 +1,29 @@
-import { Cta, TelegramCta } from "./cta";
+﻿import { Cta, TelegramCta } from "./cta";
 import { Reveal, Section, SectionHeading } from "./primitives";
-
-const MODULES = [
-  {
-    n: "Modul 01",
-    title: "AI orqali realistik videolar",
-    items: [
-      "AI video nima",
-      "g‘oya yaratish",
-      "ssenariy",
-      "promptlar",
-      "sahna yaratish",
-      "personajlar",
-      "mahsulotlar",
-      "cinematic sahnalar",
-      "montaj",
-      "yakuniy video",
-    ],
-  },
-  {
-    n: "Modul 02",
-    title: "Neyrofotosessiya",
-    items: [
-      "fotosuratni tayyorlash",
-      "obraz yaratish",
-      "lokatsiya",
-      "kiyim",
-      "professional portret",
-      "shaxsiy brend vizuallari",
-      "kreativ konsepsiyalar",
-    ],
-  },
-  {
-    n: "Modul 03",
-    title: "AI multfilmlar va storytelling",
-    items: ["personaj yaratish", "syujet", "sahnalar", "vizual uslub", "ovoz", "animatsiya", "yakuniy video"],
-  },
-  {
-    n: "Modul 04",
-    title: "Portfolio yaratish",
-    items: ["portfolio nima", "qanday ishlarni qo‘shish", "ishni qanday taqdim qilish", "case study", "ishonch yaratish"],
-  },
-  {
-    n: "Modul 05",
-    title: "Xizmatni paketlash va mijoz topish",
-    items: [
-      "xizmatni paketlash",
-      "taklif yaratish",
-      "narxlash asoslari",
-      "potensial mijoz topish",
-      "mijoz bilan muloqot",
-      "qayta buyurtma olish",
-    ],
-  },
-  {
-    n: "Modul 06",
-    title: "Instagramni rivojlantirish",
-    items: ["profil pozitsiyalash", "bio", "kontent yo‘nalishlari", "Reels", "auditoriya", "muntazam kontent"],
-  },
-];
-
-const COURSE_BONUSES = [
-  {
-    n: "Bonus 01",
-    title: "Instagram akkauntini to‘g‘ri qadoqlash",
-    text: "Bio, avatar, highlights, xizmatlarni ko‘rsatish va profilni potensial mijoz uchun tushunarli qilish.",
-  },
-  {
-    n: "Bonus 02",
-    title: "Instagramni rivojlantirish sirlari",
-    text: "Kontent ustunlari, Reels g‘oyalari, auditoriya bilan aloqa va muntazam rivojlanish bo‘yicha qo‘shimcha dars.",
-  },
-  {
-    n: "Bonus 03",
-    title: "Portfolio yaratish bo‘yicha qo‘shimcha dars",
-    text: "Birinchi ishlaringizni ishonch uyg‘otadigan portfolioga aylantirish bo‘yicha amaliy dars.",
-  },
-];
+import { useT } from "@/i18n/lang";
 
 export function Course() {
+  const t = useT();
+
   return (
     <Section id="kurs" className="border-y border-border/60 bg-obsidian/50">
       <SectionHeading
-        eyebrow="Kurs"
-        title="AI yordamida kreativ kontent yaratishni o‘rganing."
-        subtitle="0 dan boshlab AI video, neyrofotosessiya, multfilm va kreativ kontent yaratishgacha."
+        eyebrow={t.course.eyebrow}
+        title={t.course.title}
+        subtitle={t.course.subtitle}
       />
       <Reveal className="mx-auto mt-8 max-w-3xl text-center">
         <p className="rounded-2xl border border-border bg-secondary/40 p-6 text-sm leading-relaxed text-muted-foreground">
-          Bu kurs faqat AI vositalaridan foydalanishni emas, o‘rgangan ko‘nikmalaringizni portfolio
-          va xizmatga aylantirishni ham o‘rgatishga qaratilgan.
+          {t.course.note}
         </p>
       </Reveal>
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {MODULES.map((m, i) => (
-          <Reveal key={m.n} delay={(i % 3) * 90}>
+        {t.course.modules.map((m, i) => (
+          <Reveal key={m.title} delay={(i % 3) * 90}>
             <article className="surface-card h-full rounded-3xl p-7">
               <span className="text-[11px] font-black tracking-[0.28em] text-primary uppercase">
-                {m.n}
+                {`${t.course.moduleLabel} 0${i + 1}`}
               </span>
               <h3 className="mt-4 text-lg font-bold">{m.title}</h3>
               <ul className="mt-5 space-y-2">
@@ -115,13 +40,13 @@ export function Course() {
       </div>
 
       <div className="mt-20">
-        <SectionHeading eyebrow="Bonuslar" title="Kursga qo‘shimcha BONUSLAR" />
+        <SectionHeading eyebrow={t.course.bonusEyebrow} title={t.course.bonusTitle} />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {COURSE_BONUSES.map((b, i) => (
-            <Reveal key={b.n} delay={i * 90}>
+          {t.course.bonuses.map((b, i) => (
+            <Reveal key={b.title} delay={i * 90}>
               <article className="surface-card h-full rounded-3xl p-7">
                 <span className="text-[11px] font-black tracking-[0.28em] text-cyan-glow uppercase">
-                  {b.n}
+                  {`${t.course.bonusLabel} 0${i + 1}`}
                 </span>
                 <h3 className="mt-4 text-lg font-bold">{b.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.text}</p>
@@ -130,8 +55,8 @@ export function Course() {
           ))}
         </div>
         <Reveal className="mt-12 flex flex-wrap justify-center gap-3">
-          <Cta href="#aloqa">Kursga ro‘yxatdan o‘tish →</Cta>
-          <TelegramCta label="Kurs haqida batafsil →" />
+          <Cta href="#aloqa">{t.course.enroll}</Cta>
+          <TelegramCta label={t.course.more} />
         </Reveal>
       </div>
     </Section>
@@ -139,25 +64,26 @@ export function Course() {
 }
 
 export function Income() {
+  const t = useT();
   const math = [
-    { a: "4 ta loyiha", b: "$250", total: "$1000" },
-    { a: "2 ta loyiha", b: "$500", total: "$1000" },
-    { a: "5 ta loyiha", b: "$200", total: "$1000" },
+    { a: t.income.projects(4), b: "$250", total: "$1000" },
+    { a: t.income.projects(2), b: "$500", total: "$1000" },
+    { a: t.income.projects(5), b: "$200", total: "$1000" },
   ];
 
   return (
     <Section>
       <SectionHeading
-        eyebrow="Maqsad"
-        title="Oyiga $1000 daromad — maqsad sifatida."
-        subtitle="AI ko‘nikmalarini o‘rganib, ularni xizmat sifatida taklif qilish orqali daromad olish mumkin."
+        eyebrow={t.income.eyebrow}
+        title={t.income.title}
+        subtitle={t.income.subtitle}
       />
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {math.map((m, i) => (
-          <Reveal key={m.a} delay={i * 90}>
+          <Reveal key={i} delay={i * 90}>
             <div className="surface-card rounded-3xl p-8 text-center">
               <p className="text-sm text-muted-foreground">{m.a}</p>
-              <p className="mt-2 text-sm text-steel">×</p>
+              <p className="mt-2 text-sm text-steel">Г—</p>
               <p className="text-2xl font-extrabold text-foreground">{m.b}</p>
               <div className="chrome-rule my-5" />
               <p className="text-3xl font-black text-primary">{m.total}</p>
@@ -167,10 +93,9 @@ export function Income() {
       </div>
       <Reveal className="mx-auto mt-10 max-w-3xl">
         <div className="rounded-3xl border border-border bg-secondary/40 p-7 text-center">
-          <p className="text-base font-bold">Bu kafolatlangan daromad emas.</p>
+          <p className="text-base font-bold">{t.income.disclaimerTitle}</p>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Natija sizning bilim va ko‘nikmalaringiz, xizmat sifatingiz, narxlashingiz, mijoz topish
-            qobiliyatingiz, bozor va amaliyotingizga bog‘liq.
+            {t.income.disclaimerText}
           </p>
         </div>
       </Reveal>

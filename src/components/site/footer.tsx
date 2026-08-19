@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.asset.json";
+﻿import logo from "@/assets/logo.asset.json";
 import {
   PHONE_1,
   PHONE_1_HREF,
@@ -7,18 +7,22 @@ import {
   TELEGRAM_HANDLE,
   TELEGRAM_URL,
 } from "./cta";
-
-const LINKS = [
-  { label: "Bosh sahifa", href: "#bosh" },
-  { label: "Xizmatlar", href: "#xizmatlar" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Biznes uchun", href: "#biznes" },
-  { label: "Kurs", href: "#kurs" },
-  { label: "Savol-javob", href: "#savol-javob" },
-  { label: "Kontaktlar", href: "#aloqa" },
-];
+import { useT } from "@/i18n/lang";
+import { LanguageSwitcher } from "./header";
 
 export function Footer() {
+  const t = useT();
+
+  const LINKS = [
+    { label: t.nav.home, href: "#bosh" },
+    { label: t.nav.services, href: "#xizmatlar" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: t.nav.business, href: "#biznes" },
+    { label: t.nav.course, href: "#kurs" },
+    { label: t.nav.faq, href: "#savol-javob" },
+    { label: t.nav.contacts, href: "#aloqa" },
+  ];
+
   return (
     <footer className="relative border-t border-border bg-obsidian px-5 pt-16 pb-32 sm:px-8 lg:pb-16">
       <div aria-hidden className="grid-bg absolute inset-0 opacity-20" />
@@ -27,7 +31,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <img
               src={logo.url}
-              alt="FARKHADIVICH AI logotipi"
+              alt="FARKHADIVICH AI"
               className="h-12 w-12 rounded-xl object-cover"
               width={48}
               height={48}
@@ -39,13 +43,16 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-5 max-w-sm text-sm text-muted-foreground">
-            G‘oyangizni kelajak vizualiga aylantiramiz.
+            {t.footer.tagline}
           </p>
-          <p className="mt-3 text-sm font-bold text-primary">Kelajakni kutmang. Uni yarating.</p>
+          <p className="mt-3 text-sm font-bold text-primary">{t.footer.slogan}</p>
+          <div className="mt-5">
+            <LanguageSwitcher />
+          </div>
         </div>
 
-        <nav aria-label="Pastki menyu">
-          <h2 className="text-xs font-bold tracking-[0.25em] text-steel uppercase">Bo‘limlar</h2>
+        <nav aria-label="Bottom menu">
+          <h2 className="text-xs font-bold tracking-[0.25em] text-steel uppercase">{t.footer.sections}</h2>
           <ul className="mt-5 space-y-2.5">
             {LINKS.map((l) => (
               <li key={l.href}>
@@ -61,7 +68,7 @@ export function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-xs font-bold tracking-[0.25em] text-steel uppercase">Aloqa</h2>
+          <h2 className="text-xs font-bold tracking-[0.25em] text-steel uppercase">{t.footer.contact}</h2>
           <ul className="mt-5 space-y-2.5 text-sm">
             <li>
               <a
@@ -96,7 +103,7 @@ export function Footer() {
       <div className="relative mx-auto mt-14 w-full max-w-7xl">
         <div className="chrome-rule" />
         <p className="mt-6 text-center text-xs text-steel">
-          © FARKHADIVICH AI. Barcha huquqlar himoyalangan.
+          {t.footer.rights}
         </p>
       </div>
     </footer>
@@ -104,6 +111,8 @@ export function Footer() {
 }
 
 export function MobileBar() {
+  const t = useT();
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-obsidian/95 p-3 backdrop-blur-xl lg:hidden">
       <a
@@ -118,7 +127,7 @@ export function MobileBar() {
         href="#aloqa"
         className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-bold text-primary-foreground"
       >
-        Buyurtma
+        {t.common.order}
       </a>
     </div>
   );

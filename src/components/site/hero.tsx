@@ -1,14 +1,10 @@
-import logo from "@/assets/logo.asset.json";
+﻿import logo from "@/assets/logo.asset.json";
 import { Cta, TelegramCta } from "./cta";
-
-const TRUST = [
-  "AI kreativ ishlab chiqarish",
-  "Biznes kontenti",
-  "Shaxsiy brend",
-  "Uzoq muddatli hamkorlik",
-];
+import { useT } from "@/i18n/lang";
 
 export function Hero() {
+  const t = useT();
+
   return (
     <section id="bosh" className="relative overflow-hidden px-5 pt-32 pb-20 sm:px-8 md:pt-44 md:pb-28">
       <div aria-hidden className="beam animate-glow absolute inset-x-0 top-0 h-[560px]" />
@@ -16,42 +12,41 @@ export function Hero() {
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <span className="animate-rise inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-[11px] font-bold tracking-[0.3em] text-primary uppercase">
-            AI Creative Studio
+            {t.hero.badge}
           </span>
           <h1
             className="animate-rise mt-6 text-4xl leading-[1.05] font-extrabold text-balance sm:text-5xl md:text-6xl"
             style={{ animationDelay: "120ms" }}
           >
-            <span className="text-chrome">G‘oyangizni kelajak vizualiga aylantiramiz.</span>
+            <span className="text-chrome">{t.hero.title}</span>
           </h1>
           <p
             className="animate-rise mt-5 text-lg font-bold text-primary sm:text-xl"
             style={{ animationDelay: "220ms" }}
           >
-            Kelajakni kutmang. Uni yarating.
+            {t.hero.slogan}
           </p>
           <p
             className="animate-rise mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             style={{ animationDelay: "300ms" }}
           >
-            FARKHADIVICH AI — bizneslar, brendlar va ijodkorlar uchun realistik AI videolar,
-            neyrofotosessiya, kreativ animatsiyalar va zamonaviy vizual kontent yaratadi.
+            {t.hero.lead}
           </p>
           <div
             className="animate-rise mt-9 flex flex-wrap gap-3"
             style={{ animationDelay: "380ms" }}
           >
-            <Cta href="#aloqa">Loyiham uchun taklif olish →</Cta>
-            <TelegramCta />
+            <Cta href="#aloqa">{t.hero.cta}</Cta>
+            <TelegramCta label={t.common.telegramCta} />
           </div>
           <ul
             className="animate-rise mt-10 flex flex-wrap gap-x-6 gap-y-3"
             style={{ animationDelay: "460ms" }}
           >
-            {TRUST.map((t) => (
-              <li key={t} className="flex items-center gap-2 text-sm text-steel">
+            {t.hero.trust.map((item) => (
+              <li key={item} className="flex items-center gap-2 text-sm text-steel">
                 <span className="h-1.5 w-1.5 rounded-full bg-cyan-glow shadow-[0_0_12px_var(--cyan-glow)]" />
-                {t}
+                {item}
               </li>
             ))}
           </ul>
@@ -66,7 +61,7 @@ export function Hero() {
             <div aria-hidden className="grid-bg absolute inset-0 rounded-[28px] opacity-30" />
             <img
               src={logo.url}
-              alt="FARKHADIVICH AI — metall va elektr ko‘k rangdagi futuristik logotip"
+              alt="FARKHADIVICH AI"
               className="relative w-full rounded-2xl object-cover"
               width={640}
               height={640}
