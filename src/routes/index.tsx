@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
-import { AiVideoExplainer, NeuroPhoto, Problems, Services } from "@/components/site/sections-a";
-import { CaseStudy, Portfolio } from "@/components/site/portfolio";
-import { Business, Process, SocialProof } from "@/components/site/business";
+import { Problems, Services } from "@/components/site/sections-a";
+import { Business, Process } from "@/components/site/business";
 import { Course, Income } from "@/components/site/course";
 import { ContactForm, Faq, FinalCta } from "@/components/site/faq-contact";
 import { Footer, MobileBar } from "@/components/site/footer";
