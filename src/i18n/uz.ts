@@ -275,6 +275,6 @@ export const uz = {
     rights: "© FARKHADIVICH AI. Barcha huquqlar himoyalangan.",
     bottomMenu: "Pastki menyu",
   },
-} as const;
+};
 
 export type Dict = typeof uz;
