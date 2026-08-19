@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "@/assets/logo.asset.json";
 import { Cta, TELEGRAM_URL } from "./cta";
 import { cn } from "@/lib/utils";
@@ -13,17 +13,22 @@ export function LanguageSwitcher({ className }: { className?: string }) {
   ];
 
   return (
-    <div className={cn("inline-flex items-center gap-1 rounded-xl border border-border/80 bg-secondary/50 p-1 backdrop-blur-md", className)}>
+    <div
+      className={cn(
+        "inline-flex items-center gap-1 rounded-xl border border-primary/30 bg-obsidian/80 p-1 shadow-inner backdrop-blur-md",
+        className
+      )}
+    >
       {langs.map((l) => (
         <button
           key={l.key}
           type="button"
           onClick={() => setLang(l.key)}
           className={cn(
-            "rounded-lg px-2.5 py-1 text-xs font-extrabold transition-all",
+            "rounded-lg px-2.5 py-1 text-xs font-bold transition-all duration-300",
             lang === l.key
-              ? "bg-primary text-primary-foreground shadow-sm"
-              : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground"
+              ? "bg-primary text-primary-foreground shadow-[0_0_12px_var(--primary)] font-extrabold"
+              : "text-muted-foreground hover:bg-secondary/80 hover:text-foreground"
           )}
         >
           {l.label}
@@ -41,7 +46,6 @@ export function Header() {
   const NAV = [
     { label: t.nav.home, href: "#bosh" },
     { label: t.nav.services, href: "#xizmatlar" },
-    { label: "Portfolio", href: "#portfolio" },
     { label: t.nav.business, href: "#biznes" },
     { label: t.nav.course, href: "#kurs" },
     { label: t.nav.faq, href: "#savol-javob" },
@@ -81,7 +85,7 @@ export function Header() {
           </span>
         </a>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <nav className="hidden items-center gap-1 xl:flex" aria-label="Main menu">
             {NAV.map((item) => (
               <a
@@ -94,7 +98,7 @@ export function Header() {
             ))}
           </nav>
 
-          <LanguageSwitcher className="hidden sm:inline-flex" />
+          <LanguageSwitcher className="inline-flex" />
 
           <a
             href={TELEGRAM_URL}
@@ -102,7 +106,7 @@ export function Header() {
             rel="noopener noreferrer"
             className="hidden rounded-xl border border-chrome/70 px-4 py-2 text-sm font-semibold whitespace-nowrap text-foreground transition-colors hover:border-primary hover:text-primary 2xl:inline-flex"
           >
-            {t.common.telegramCta.replace(" в†’", "")}
+            {t.common.telegramCta.replace(" →", "")}
           </a>
           <Cta href="#aloqa" className="hidden px-5 py-2 sm:inline-flex">
             {t.common.startProject}
@@ -141,10 +145,6 @@ export function Header() {
           className="mx-5 mt-3 rounded-2xl border border-border bg-obsidian/95 p-4 backdrop-blur-xl sm:mx-8 xl:hidden"
           aria-label="Mobile menu"
         >
-          <div className="mb-4 flex items-center justify-between pb-3 border-b border-border/60">
-            <span className="text-xs font-bold text-steel uppercase">{t.common.language}:</span>
-            <LanguageSwitcher />
-          </div>
           {NAV.map((item) => (
             <a
               key={item.href}
