@@ -1,32 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
-import { tanstackStart } from "@tanstack/react-start/plugin";
-import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  server: {
-    host: "0.0.0.0",
-    port: 8080,
-    allowedHosts: [
-      "farkhadivich-ai-production.up.railway.app",
-      ".up.railway.app",
-      ".railway.app",
-    ],
+  tanstackStart: {
+    server: { entry: "server" },
   },
-  preview: {
-    host: "0.0.0.0",
-    port: 8080,
-    allowedHosts: [
-      "farkhadivich-ai-production.up.railway.app",
-      ".up.railway.app",
-      ".railway.app",
-    ],
-  },
-  plugins: [
-    tanstackStart(),
-    react(),
-    tsconfigPaths(),
-    tailwindcss(),
-  ],
 });
