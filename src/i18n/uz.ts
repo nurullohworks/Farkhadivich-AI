@@ -119,7 +119,12 @@ export const uz = {
     packageTitle: "Oylik kreativ produksiya paketi",
     packageText:
       "Biznesingiz uchun har oy belgilangan miqdorda professional AI vizuallari, reklama videolari va kreativ materiallar ishlab chiqamiz.",
-    features: [
+    packageCta: "Hamkorlikni muhokama qilish →",
+    bonusEyebrow: "Bonuslar",
+    bonusTitle: "Doimiy hamkorlarimiz uchun maxsus bonuslar",
+    bonusSubtitle: "Bonuslar hamkorlik shartlariga muvofiq taqdim etiladi.",
+    bonusLabel: "Bonus",
+    bonuses: [
       {
         title: "Oylik video va vizual kontent",
         text: "Rejalashtirilgan va biznes maqsadlaringizga moslashtirilgan kontent to'plami.",
