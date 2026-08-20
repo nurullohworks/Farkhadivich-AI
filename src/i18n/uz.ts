@@ -67,6 +67,16 @@ export const uz = {
         uses: ["shaxsiy brend", "Instagram", "reklama", "professional portret", "kreativ kampaniyalar"],
       },
       {
+        title: "AI Agentlar va Chat Botlar",
+        text: "Instagram Direct va Telegram uchun aqlli AI agentlar. 24/7 mijozlar bilan muloqot qiladi, savollarga javob beradi, buyurtmalarni qabul qiladi va sotuvlarni oshiradi.",
+        uses: ["Instagram Direct", "Telegram bot", "24/7 mijozlarga xizmat", "avtomatik sotuv", "CRM integratsiya"],
+      },
+      {
+        title: "Vibe Coding orqali Saytlar yaratish",
+        text: "Eng zamonaviy sun'iy intellekt va Vibe Coding texnologiyalari yordamida biznesingiz, xizmatlaringiz va shaxsiy brendingiz uchun yuqori tezlikdagi premium veb-saytlar.",
+        uses: ["Landing Page", "korporativ sayt", "Vibe Coding", "yuqori tezlik", "zamonaviy dizayn"],
+      },
+      {
         title: "AI multfilmlar va animatsiyalar",
         text: "AI yordamida personajlar, hikoyalar va qiziqarli animatsion videolar yaratish.",
         uses: ["personajlar", "hikoya", "animatsiya"],
@@ -108,15 +118,14 @@ export const uz = {
     packageEyebrow: "Uzoq muddatli kreativ hamkorlik",
     packageTitle: "Oylik kreativ produksiya paketi",
     packageText:
-      "Kontent rejasi, ishlab chiqarish va muntazam yetkazib berish — barchasi bitta jamoada. Shartlar biznesingiz hajmiga qarab kelishiladi.",
-    packageCta: "Hamkorlikni muhokama qilish →",
-    bonusEyebrow: "Bonuslar",
-    bonusTitle: "Doimiy hamkorlarimiz uchun qo'shimcha bonuslar",
-    bonusSubtitle: "Bonuslar hamkorlik shartlariga muvofiq taqdim etiladi.",
-    bonusLabel: "Bonus",
-    bonuses: [
+      "Biznesingiz uchun har oy belgilangan miqdorda professional AI vizuallari, reklama videolari va kreativ materiallar ishlab chiqamiz.",
+    features: [
       {
-        title: "Professional reklama videosi",
+        title: "Oylik video va vizual kontent",
+        text: "Rejalashtirilgan va biznes maqsadlaringizga moslashtirilgan kontent to'plami.",
+      },
+      {
+        title: "Reklama kreativlari",
         text: "Uzoq muddatli hamkorlik doirasida biznesingiz uchun qo'shimcha professional reklama videosi.",
       },
       {
@@ -217,6 +226,10 @@ export const uz = {
     items: [
       { q: "AI orqali realistik video nima?", a: "Bu — sun'iy intellekt yordamida real hayotga o'xshash personajlar, muhitlar, mahsulotlar va cinematic sahnalarni yaratish yoki mavjud materiallarni kreativ qayta ishlash usuli." },
       { q: "Neyrofotosessiya qanday ishlaydi?", a: "Siz fotosuratlaringizni yuborasiz, biz esa AI yordamida turli obraz, kiyim, lokatsiya va konsepsiyalarda professional vizuallar tayyorlaymiz." },
+      { q: "AI Chat Bot va AI Agentlar qanday ishlaydi va biznesimga qanday foyda keltiradi?", a: "AI Agent — bu oddiy tugmali bot emas, balki sun'iy intellekt (LLM) asosida ishlaydigan aqlli yordamchi. U mijozingizning har qanday murakkab savolini insondek tushunadi, mahsulot va xizmatlaringiz haqida to'liq maslahat beradi, narxlarni aytadi, buyurtmani rasmiylashtiradi va CRM tizimingizga kiritadi. 24/7 dam olishsiz ishlab, birorta ham mijozni yo'qotmaysiz." },
+      { q: "Instagram Direct va Telegram AI Agentlarni ulash qancha vaqt oladi?", a: "Loyiha murakkabligiga qarab 3 kundan 7 kungacha. Biznesingiz haqidagi barcha ma'lumotlar, savol-javoblar va sotuv skriptlari AI bazasiga kiritiladi, sinovdan o'tkaziladi va profilingizga to'liq ulab beriladi." },
+      { q: "Vibe Coding orqali sayt yaratish nima va uning afzalligi nimada?", a: "Vibe Coding — bu eng ilg'or sun'iy intellekt vositalari va zamonaviy freymvorklar yordamida sayt yaratishning yangi avlodi. Oylab cho'ziladigan an'anaviy dasturlash o'rniga, saytingiz bir necha kunda mukammal dizayn, to'liq mobil moslashuvchanlik, chaqmoqdek tezlik va yuqori konversiya bilan tayyor bo'ladi." },
+      { q: "Vibe Coding bilan yaratilgan saytni keyinchalik o'zim boshqara olamanmi?", a: "Albatta. Saytingiz zamonaviy arxitekturada quriladi, domen (.uz) va xavfsiz SSL sertifikatlariga ulanadi. Xohlagan vaqtingizda matnlar, rasmlar yoki yangi bo'limlarni osonlik bilan yangilash yoki kengaytirish mumkin." },
       { q: "Bizneslar bilan shartnoma asosida ishlaysizmi?", a: "Ha. Uzoq muddatli hamkorlik doirasida biznesingiz uchun muntazam kreativ kontent ishlab chiqamiz. Shartlar loyiha hajmiga qarab kelishiladi." },
       { q: "Bir martalik buyurtma berish mumkinmi?", a: "Albatta. Bitta video yoki bitta vizual to'plam uchun ham murojaat qilishingiz mumkin." },
       { q: "Video tayyorlash qancha vaqt oladi?", a: "Muddat loyihaning murakkabligi, sahnalar soni va tasdiqlash bosqichlariga bog'liq. Aniq muddatni brif asosida aytamiz." },
@@ -247,6 +260,8 @@ export const uz = {
     serviceOptions: [
       "AI realistik video",
       "Neyrofotosessiya",
+      "AI Agent va Chat Bot (Telegram/Instagram)",
+      "Vibe Coding orqali sayt yaratish",
       "AI multfilm",
       "Reklama video",
       "Biznes bilan uzoq muddatli hamkorlik",
