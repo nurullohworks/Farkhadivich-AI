@@ -204,7 +204,7 @@ export const uz = {
     eyebrow: "Maqsad",
     title: "Oyiga $1000 daromad — maqsad sifatida.",
     subtitle: "AI ko'nikmalarini o'rganib, ularni xizmat sifatida taklif qilish orqali daromad olish mumkin.",
-    projects: (n: number) => '${n} ta loyiha',
+    projects: (n: number) => `${n} ta loyiha`,
     disclaimerTitle: "Bu kafolatlangan daromad emas.",
     disclaimerText:
       "Natija sizning bilim va ko'nikmalaringiz, xizmat sifatingiz, narxlashingiz, mijoz topish qobiliyatingiz, bozor va amaliyotingizga bog'liq.",
